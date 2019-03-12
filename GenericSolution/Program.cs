@@ -15,15 +15,18 @@ namespace GenericSolution
 
                  cert.GenerateDocument();
 
-                IDocument<string> invoice = new Invoice();
+                cert = new Invoice();
 
-                invoice.GenerateDocument();
+                cert.GenerateDocument();
 
-                IDocument<string> noClaimBonus = new NoClaimBonus();
+               cert = new NoClaimBonus();
 
-                noClaimBonus.GenerateDocument();
+                cert.GenerateDocument();
 
 
+            cert = new ScheduleInvoice();
+
+            cert.GenerateDocument();
 
 
 
