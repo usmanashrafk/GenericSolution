@@ -74,6 +74,7 @@
     <Compile Include="NoClaimBonus.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScheduleInvoice.cs" />
     <Compile Include="Singleton.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="XtraForm1.cs">
