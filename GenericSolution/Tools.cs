@@ -345,6 +345,17 @@ namespace GenericSolution
                 return "C:\\images\\HalHeader.jpg";
         }
 
+        public static string GetHeaderWithText()
+        {
+            return "C:\\images\\HalLogoWithText.jpg";
+        }
+
+
+        public static string GetHeaderWithoutText()
+        {
+            return "C:\\images\\HalLogo.jpg";
+        }
+
         public static string GetSecondPageHeader()
         {
             return "C:\\images\\HalHeader2.jpg";

@@ -68,10 +68,10 @@ namespace GenericSolution
             Tools.AddInvoiceFooter(ref sec);
 
             Image image = new Image();
-            image = sec.AddImage(Tools.GetMainPageHeader());
+            image = sec.AddImage(Tools.GetHeaderWithText());
 
             image.Width = "190mm";
-            image.Height = "40mm";
+            image.Height = "25mm";
             image.Left = ShapePosition.Center;
 
 
@@ -80,9 +80,9 @@ namespace GenericSolution
             image.Width = table_width;
 
             Table t = sec.AddTable();
-            Column c = t.AddColumn("95mm");
+            Column c = t.AddColumn("120mm");
             c.Format.Alignment = ParagraphAlignment.Left;
-            c = t.AddColumn("95mm");
+            c = t.AddColumn("70mm");
             c.Format.Alignment = ParagraphAlignment.Right;
             Row r = t.AddRow();
 
@@ -97,8 +97,6 @@ namespace GenericSolution
 
             p = r.Cells[0].AddParagraph();
         
-            //p.Style = "Heading2";
-            //p.AddText("Date: " + System.DateTime.Today.Date.ToLongDateString());
             p.AddText("Sportcruiser Aviation");
             p.AddLineBreak();
             p.AddText("157 Viewmount Park");
@@ -112,7 +110,7 @@ namespace GenericSolution
 
 
             p = r.Cells[1].AddParagraph();
-            p.Format.Alignment = ParagraphAlignment.Right;
+            p.Format.Alignment = ParagraphAlignment.Left;
 
             p.AddText("Hayward Aviation");
             p.AddLineBreak();
@@ -122,9 +120,16 @@ namespace GenericSolution
             p.AddLineBreak();
             p.AddText("London EC3A 7AW");
             p.AddLineBreak();
-            p.AddText("Telephone:    0207 902 7800");
+            p.AddText("Telephone:");
+            p.AddTab();
+            
+            p.AddText("0207 902 7800");
             p.AddLineBreak();
-            p.AddText("Fax:    0207 928 8040");
+            p.AddText("Fax:");
+            p.AddSpace(2);
+            p.AddTab();
+            p.AddTab();
+            p.AddText("0207 928 8040");
             p.AddLineBreak();
 
             r = t.AddRow();
@@ -140,7 +145,7 @@ namespace GenericSolution
             p.AddLineBreak();
 
             p = r.Cells[1].AddParagraph();
-            p.Format.Alignment = ParagraphAlignment.Right;
+            p.Format.Alignment = ParagraphAlignment.Left;
             p.AddText("Invoice Number F186583001RN");
 
             AddClientDetails(sec);
@@ -209,12 +214,17 @@ namespace GenericSolution
             c.Format.LeftIndent = "0mm";
             c.Format.RightIndent = "0mm";
 
-            c = t.AddColumn("30mm");
+            c = t.AddColumn("9mm");
             c.Format.Alignment = ParagraphAlignment.Left;
             c.Format.LeftIndent = "0mm";
             c.Format.RightIndent = "0mm";
 
-            c = t.AddColumn("1mm");
+            c = t.AddColumn("15mm");
+            c.Format.Alignment = ParagraphAlignment.Left;
+            c.Format.LeftIndent = "0mm";
+            c.Format.RightIndent = "0mm";
+
+            c = t.AddColumn("6mm");
             c.Format.Alignment = ParagraphAlignment.Left;
             c.Format.LeftIndent = "0mm";
             c.Format.RightIndent = "0mm";
@@ -236,14 +246,14 @@ namespace GenericSolution
             p.AddText("Policy Details");
             r.Cells[1].Shading.Color = table_color;
             r.Cells[0].Shading.Color = table_color;
-            r.Cells[2].MergeRight = 4;
-            r.Cells[1].MergeRight = 5;
+            r.Cells[2].MergeRight = 5;
+            r.Cells[1].MergeRight = 6;
 
             r = t.AddRow();
             r = t.AddRow();
             p = r.Cells[1].AddParagraph();
             p.AddText("With regards to your policy below we set out details of the following transactions effected on your behalf: -");
-            r.Cells[1].MergeRight = 5;
+            r.Cells[1].MergeRight = 6;
             r.Cells[1].Format.Alignment = ParagraphAlignment.Center;
 
             r = t.AddRow();
@@ -260,7 +270,7 @@ namespace GenericSolution
 
             p = r.Cells[3].AddParagraph();
             p.AddText("Sportcruiser Aviation &/or the Irish Light Aviation Society (ILAS) for their respective rights and interests");
-            r.Cells[3].MergeRight = 3;
+            r.Cells[3].MergeRight = 4;
 
             r = t.AddRow();
             r.Cells[1].Borders.Right.Width = 0.5;
@@ -274,7 +284,7 @@ namespace GenericSolution
 
             p = r.Cells[3].AddParagraph();
             p.AddText("11th March 2019 to 10th March 2020 both days inclusive");
-            r.Cells[3].MergeRight = 3;
+            r.Cells[3].MergeRight = 4;
 
             r = t.AddRow();
             r.Cells[1].Borders.Right.Width = 0.5;
@@ -288,7 +298,7 @@ namespace GenericSolution
 
             p = r.Cells[3].AddParagraph();
             p.AddText("Munich RE Hull and Liability Insurance");
-            r.Cells[3].MergeRight = 3;
+            r.Cells[3].MergeRight = 4;
 
             r = t.AddRow();
             r.Cells[1].Borders.Right.Width = 0.5;
@@ -302,7 +312,7 @@ namespace GenericSolution
 
             p = r.Cells[3].AddParagraph();
             p.AddText("Original Premium 2018/19");
-            r.Cells[3].MergeRight = 3;
+            r.Cells[3].MergeRight = 4;
 
          
             //r = t.AddRow();
@@ -315,7 +325,10 @@ namespace GenericSolution
             p.AddFormattedText("Gross Premium", TextFormat.Bold);
 
             p = r.Cells[5].AddParagraph();
-            p.AddText("GBP      1,947.12");
+            p.AddText("GBP");
+            p = r.Cells[6].AddParagraph();
+            p.AddText("1,947.12");
+            r.Cells[6].Format.Alignment = ParagraphAlignment.Right;
             p.AddLineBreak();
           
             r = t.AddRow();
@@ -323,14 +336,19 @@ namespace GenericSolution
             p.AddFormattedText("Plus Customer Service Charge", TextFormat.Bold);
           
             p = r.Cells[5].AddParagraph();
-            p.AddText("GBP      31.50");
-
+            p.AddText("GBP");
+            p = r.Cells[6].AddParagraph();
+            p.AddText("31.50");
+            r.Cells[6].Format.Alignment = ParagraphAlignment.Right;
             r = t.AddRow();
             r = t.AddRow();
             p = r.Cells[4].AddParagraph();
             p.AddFormattedText("Premium Due", TextFormat.Bold);
             p = r.Cells[5].AddParagraph();
-            p.AddFormattedText("GBP      1,978.62","Heading4");
+            p.AddFormattedText("GBP","Heading4");
+            p = r.Cells[6].AddParagraph();
+            p.AddFormattedText("1,978.62", "Heading4");
+            r.Cells[6].Format.Alignment = ParagraphAlignment.Right;
             p.AddLineBreak();
 
             r = t.AddRow();
@@ -338,7 +356,7 @@ namespace GenericSolution
             p = r.Cells[1].AddParagraph();
             p.AddFormattedText("THIS PREMIUM IS DUE AND PAYABLE BY RETURN","Heading4");
             r.Cells[1].Format.Alignment = ParagraphAlignment.Center;
-            r.Cells[1].MergeRight = 5;
+            r.Cells[1].MergeRight = 6;
 
 
 
