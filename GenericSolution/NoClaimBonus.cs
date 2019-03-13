@@ -68,10 +68,10 @@ namespace GenericSolution
             Tools.AddInvoiceFooter(ref sec);
 
             Image image = new Image();
-            image = sec.AddImage(Tools.GetMainPageHeader());
+            image = sec.AddImage(Tools.GetHeaderWithText());
 
             image.Width = "190mm";
-            image.Height = "40mm";
+            image.Height = "25mm";
             image.Left = ShapePosition.Center;
 
 
@@ -80,9 +80,9 @@ namespace GenericSolution
             image.Width = table_width;
 
             Table t = sec.AddTable();
-            Column c = t.AddColumn("95mm");
+            Column c = t.AddColumn("120mm");
             c.Format.Alignment = ParagraphAlignment.Left;
-            c = t.AddColumn("95mm");
+            c = t.AddColumn("70mm");
             c.Format.Alignment = ParagraphAlignment.Right;
             Row r = t.AddRow();
 
@@ -97,8 +97,6 @@ namespace GenericSolution
 
             p = r.Cells[0].AddParagraph();
 
-            //p.Style = "Heading2";
-            //p.AddText("Date: " + System.DateTime.Today.Date.ToLongDateString());
             p.AddText("Sportcruiser Aviation");
             p.AddLineBreak();
             p.AddText("157 Viewmount Park");
@@ -112,7 +110,7 @@ namespace GenericSolution
 
 
             p = r.Cells[1].AddParagraph();
-            p.Format.Alignment = ParagraphAlignment.Right;
+            p.Format.Alignment = ParagraphAlignment.Left;
 
             p.AddText("Hayward Aviation");
             p.AddLineBreak();
@@ -122,9 +120,16 @@ namespace GenericSolution
             p.AddLineBreak();
             p.AddText("London EC3A 7AW");
             p.AddLineBreak();
-            p.AddText("Telephone:    0207 902 7800");
+            p.AddText("Telephone:");
+            p.AddTab();
+
+            p.AddText("0207 902 7800");
             p.AddLineBreak();
-            p.AddText("Fax:    0207 928 8040");
+            p.AddText("Fax:");
+            p.AddSpace(2);
+            p.AddTab();
+            p.AddTab();
+            p.AddText("0207 928 8040");
             p.AddLineBreak();
 
             r = t.AddRow();
@@ -142,7 +147,7 @@ namespace GenericSolution
             p.AddLineBreak();
 
             p = r.Cells[1].AddParagraph();
-            p.Format.Alignment = ParagraphAlignment.Right;
+            p.Format.Alignment = ParagraphAlignment.Left;
             p.AddText("Credit Note Number F176583002RP");
 
             AddClientDetails(sec);

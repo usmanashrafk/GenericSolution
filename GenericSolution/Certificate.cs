@@ -128,10 +128,10 @@ namespace GenericSolution
 
            Tools.AddNoFooter(ref sec);
 
-            image = sec.AddImage(Tools.GetMainPageHeader());
+            image = sec.AddImage(Tools.GetHeaderWithText());
 
             image.Width = "190mm";
-            image.Height = "50mm";
+            image.Height = "25mm";
             image.Left = ShapePosition.Center;
 
 
