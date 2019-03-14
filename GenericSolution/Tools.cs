@@ -361,7 +361,7 @@ namespace GenericSolution
             return "C:\\images\\HalHeader2.jpg";
         }
 
-        public static Color GetTableColorByRetailer(string retailer)
+        public static Color GetTableColorByRetailer(string retailer = "")
         {
             if (retailer.Trim().ToUpper() == "SF")
             {
