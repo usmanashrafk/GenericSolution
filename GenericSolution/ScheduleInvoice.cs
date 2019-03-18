@@ -125,8 +125,8 @@ namespace GenericSolution
 
             image = sec.AddImage(Tools.GetHeaderWithoutText());
 
-            image.Width = "190mm";
-            image.Height = "25mm";
+          //  image.Width = "190mm";
+           // image.Height = "35mm";
             image.Left = ShapePosition.Center;
         }
         private string SaveDocument(Document document)
@@ -294,8 +294,6 @@ namespace GenericSolution
             p = r.Cells[3].AddParagraph();
             p.AddFormattedText("Flight, Taxiing, Ground and Transported (as more fully defined in the Certificate).", TextFormat.NotBold);
             r.Cells[3].MergeRight = 3;
-
-           
 
         }
 

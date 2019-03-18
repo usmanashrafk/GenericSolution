@@ -342,12 +342,12 @@ namespace GenericSolution
       
         public static string GetMainPageHeader()
         {
-                return "C:\\images\\HalHeader.jpg";
+                return "C:\\images\\HeaderWithLongTextPNG.png";
         }
 
         public static string GetHeaderWithText()
         {
-            return "C:\\images\\HalLogoWithText.jpg";
+            return "C:\\images\\HeaderWithTextPNG.png";
         }
 
 

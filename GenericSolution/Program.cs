@@ -13,15 +13,15 @@ namespace GenericSolution
             
                  IDocument<string> cert = new Certificate();
 
-                 // cert.GenerateDocument();
+                 cert.GenerateDocument();
 
                   cert = new Invoice();
 
-                //  cert.GenerateDocument();
+                  cert.GenerateDocument();
 
                  cert = new NoClaimBonus();
 
-               //  cert.GenerateDocument();
+                 cert.GenerateDocument();
 
 
             cert = new ScheduleInvoice();

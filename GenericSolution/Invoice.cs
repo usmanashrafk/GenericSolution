@@ -70,14 +70,12 @@ namespace GenericSolution
             Image image = new Image();
             image = sec.AddImage(Tools.GetHeaderWithText());
 
-            image.Width = "190mm";
-            image.Height = "25mm";
+            //image.Width = "190mm";
+            //image.Height = "25mm";
             image.Left = ShapePosition.Center;
 
 
-            image = sec.AddImage("C:\\images\\transpix.gif");
-            image.Height = "3mm";
-            image.Width = table_width;
+
 
             Table t = sec.AddTable();
             Column c = t.AddColumn("120mm");
