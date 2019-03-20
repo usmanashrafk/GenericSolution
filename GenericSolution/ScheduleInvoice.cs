@@ -8,7 +8,6 @@ namespace GenericSolution
 {
     public class ScheduleInvoice : IDocument<string>
     {
-
         private const string page_height = "297mm";
         private const string page_width = "210mm";
         private const string margin = "10mm";

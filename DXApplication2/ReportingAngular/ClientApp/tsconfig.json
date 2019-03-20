@@ -1,0 +1,34 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "baseUrl": "./",
+    "experimentalDecorators": true,
+    "paths": {
+      "globalize": [
+        "../node_modules/globalize/dist/globalize"
+      ],
+      "globalize/*": [
+        "../node_modules/globalize/dist/globalize/*"
+      ],
+      "cldr": [
+        "../node_modules/cldrjs/dist/cldr"
+      ],
+      "cldr/*": [
+        "../node_modules/cldrjs/dist/cldr/*"
+      ]
+    },
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+  }
+}

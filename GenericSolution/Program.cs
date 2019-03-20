@@ -13,6 +13,8 @@ namespace GenericSolution
             
                  IDocument<string> cert = new Certificate();
 
+           
+
                  cert.GenerateDocument();
 
                   cert = new Invoice();
@@ -30,6 +32,9 @@ namespace GenericSolution
 
 
 
+            DocsMerge merger = new DocsMerge();
+
+              //   merger.MergeDocument();
 
 
 
@@ -42,36 +47,36 @@ namespace GenericSolution
 
 
 
-            
+
             // XtraForm1 xtra = new XtraForm1();
 
-           // xtra.ShowDialog();
+            // xtra.ShowDialog();
 
-           // var time = DateTime.Now.TimeOfDay.Hours;
-           // var time2 = DateTime.Now.AddHours(12);
+            // var time = DateTime.Now.TimeOfDay.Hours;
+            // var time2 = DateTime.Now.AddHours(12);
 
-           // DateTime datetime = Convert.ToDateTime("12-03-2019 00:01:00");
+            // DateTime datetime = Convert.ToDateTime("12-03-2019 00:01:00");
 
-           // var t3 = datetime.Hour;
+            // var t3 = datetime.Hour;
 
-           // if(t3 == 0 && datetime.Minute == 1)
-           // {
-           //     Console.Write("a");
-           // }
+            // if(t3 == 0 && datetime.Minute == 1)
+            // {
+            //     Console.Write("a");
+            // }
 
-           // Singleton singleton;
+            // Singleton singleton;
 
-           // singleton = Singleton.Instance;
+            // singleton = Singleton.Instance;
 
-           // singleton.Display();
+            // singleton.Display();
 
-           // List<int> a = new List<int> { 1, 2, 3, 4, 5, 6 };
-        
-           //var v =  a.Where(x => x % 2 == 0).Sum(x=> x).ToString();
+            // List<int> a = new List<int> { 1, 2, 3, 4, 5, 6 };
 
-           // Console.WriteLine(v);
+            //var v =  a.Where(x => x % 2 == 0).Sum(x=> x).ToString();
 
-         //   Console.Read();
+            // Console.WriteLine(v);
+
+            //   Console.Read();
 
 
         }

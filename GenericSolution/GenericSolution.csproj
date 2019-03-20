@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Certificate.cs" />
+    <Compile Include="DocsMerge.cs" />
     <Compile Include="IDocument.cs" />
     <Compile Include="Invoice.cs" />
     <Compile Include="NoClaimBonus.cs" />
