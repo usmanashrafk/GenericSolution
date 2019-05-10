@@ -16,7 +16,7 @@ using System.Globalization;
 using MigraDoc.Rendering;
 using System.IO;
 using PdfSharp.Pdf;
-using iTextSharp.text.pdf;
+//using iTextSharp.text.pdf;
 
 namespace GenericSolution
 {
@@ -357,7 +357,7 @@ namespace GenericSolution
             p.AddText("(e) Iran, Iraq, Libya, Syria, Yemen;");
             p.AddLineBreak();
             p.AddLineBreak();
-            p.AddText("(f) United States ofAmerica and Canada.");
+            p.AddText("(f) United States of America and Canada.");
             p.AddLineBreak();
            
 

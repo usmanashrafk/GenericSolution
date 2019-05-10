@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="Sample Dashboard" />
+  <DataSources>
+    <SqlDataSource Name="SalesPerson" ComponentName="DataSource1">
+      <Connection Name="NWindConnectionString" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="SalesPerson">
+        <Tables>
+          <Table Name="SalesPerson" />
+        </Tables>
+        <Columns>
+          <AllColumns Table="SalesPerson" />
+        </Columns>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+      <CalculatedFields>
+        <CalculatedField Name="my card" Expression="[FirstName][[LastName]]" DataType="Auto" DataMember="SalesPerson" />
+      </CalculatedFields>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Chart ComponentName="chartDashboardItem1" Name="Chart 1" DataSource="DataSource1" DataMember="SalesPerson">
+      <DataItems>
+        <Measure DataMember="Extended Price" DefaultId="DataItem0" />
+        <Dimension DataMember="CategoryName" DefaultId="DataItem1" />
+        <Dimension DataMember="Country" DefaultId="DataItem2" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension DefaultId="DataItem2" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument DefaultId="DataItem1" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple>
+              <Value DefaultId="DataItem0" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <TreeView ComponentName="treeViewDashboardItem1" Name="Tree View 1" DataSource="DataSource1" DataMember="SalesPerson" AutoExpand="true">
+      <DataItems>
+        <Dimension DataMember="CategoryName" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </TreeView>
+    <GeoPointMap ComponentName="geoPointMapDashboardItem1" Name="Geo Point Map 1" DataSource="DataSource1" DataMember="SalesPerson">
+      <ViewArea TopLatitude="83.645130000000009" BottomLatitude="-55.611829999999962" LeftLongitude="-179.99999999999997" CenterPointLatitude="44.08908074480383" CenterPointLongitude="1.4210854715202004E-13" />
+      <MapLegend />
+      <WeightedLegend />
+    </GeoPointMap>
+    <GeoPointMap ComponentName="geoPointMapDashboardItem2" Name="Geo Point Map 2" DataSource="DataSource1" DataMember="SalesPerson">
+      <ViewArea TopLatitude="83.430812941706222" BottomLatitude="-16.041323133044433" RightLongitude="140.88457705709698" CenterPointLatitude="59.13326027131653" CenterPointLongitude="-34.265344202745524" CreateViewerPaddings="false" />
+      <MapLegend />
+      <WeightedLegend />
+    </GeoPointMap>
+    <Card ComponentName="cardDashboardItem1" Name="Cards 1" DataSource="DataSource1" DataMember="SalesPerson" ContentArrangementMode="FixedColumnCount" ContentLineCount="7">
+      <InteractivityOptions MasterFilterMode="Multiple" />
+      <DataItems>
+        <Measure DataMember="my card" SummaryType="Count" DefaultId="DataItem0" />
+      </DataItems>
+      <Card>
+        <ActualValue DefaultId="DataItem0" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+        <LayoutTemplate Type="Stretched">
+          <TopValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+          <MainValue Visible="true" ValueType="Title" DimensionIndex="0" />
+          <SubValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+          <BottomValue1 Visible="true" ValueType="PercentVariation" DimensionIndex="0" />
+          <BottomValue2 Visible="true" ValueType="AbsoluteVariation" DimensionIndex="0" />
+          <DeltaIndicator Visible="true" />
+          <Sparkline Visible="true" />
+        </LayoutTemplate>
+      </Card>
+    </Card>
+    <ListBox ComponentName="listBoxDashboardItem1" Name="List Box 1" DataSource="DataSource1" DataMember="SalesPerson" />
+    <ListBox ComponentName="listBoxDashboardItem2" Name="List Box 2" DataSource="DataSource1" DataMember="SalesPerson" />
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Weight="100">
+      <LayoutGroup Orientation="Vertical" Weight="165.41070082893745">
+        <LayoutGroup Weight="165.41070082893745">
+          <LayoutItem DashboardItem="treeViewDashboardItem1" Weight="34.589299171062549" />
+          <LayoutGroup Orientation="Vertical" Weight="165.41070082893745">
+            <LayoutItem DashboardItem="listBoxDashboardItem1" Weight="165.41070082893745" />
+            <LayoutItem DashboardItem="listBoxDashboardItem2" Weight="165.41070082893745" />
+          </LayoutGroup>
+        </LayoutGroup>
+        <LayoutGroup Weight="165.41070082893745">
+          <LayoutGroup Orientation="Vertical" Weight="165.41070082893745">
+            <LayoutItem DashboardItem="chartDashboardItem1" Weight="165.41070082893745" />
+            <LayoutItem DashboardItem="geoPointMapDashboardItem2" Weight="165.41070082893745" />
+          </LayoutGroup>
+          <LayoutGroup Orientation="Vertical" Weight="165.41070082893745">
+            <LayoutItem DashboardItem="cardDashboardItem1" Weight="165.41070082893745" />
+            <LayoutItem DashboardItem="geoPointMapDashboardItem1" Weight="165.41070082893745" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

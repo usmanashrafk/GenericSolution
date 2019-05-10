@@ -3,50 +3,53 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Office = Microsoft.Office.Core;
 
 namespace GenericSolution
 {
+    /// <summary>
+    /// 
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
         {
             
                  IDocument<string> cert = new Certificate();
+                // cert.GenerateDocument();
 
-           
-
-                 cert.GenerateDocument();
-
-                  cert = new Invoice();
-
-                  cert.GenerateDocument();
-
-                 cert = new NoClaimBonus();
-
-                 cert.GenerateDocument();
-
-
-            cert = new ScheduleInvoice();
-
+            cert = new RotorCertificate();
             cert.GenerateDocument();
 
 
 
-            DocsMerge merger = new DocsMerge();
+            //      cert = new Invoice();
 
-              //   merger.MergeDocument();
+            //      cert.GenerateDocument();
 
+            //     cert = new NoClaimBonus();
 
-
-
-
-
+            //     cert.GenerateDocument();
 
 
+            //cert = new ScheduleInvoice();
+
+            //cert.GenerateDocument();
+
+
+
+            //DocsMerge merger = new DocsMerge();
+
+            //   merger.MergeDocument();
+
+
+
+                                 
 
 
 
 
+            #region NotUSED
 
             // XtraForm1 xtra = new XtraForm1();
 
@@ -78,7 +81,10 @@ namespace GenericSolution
 
             //   Console.Read();
 
-
+            #endregion
         }
+
+        
+
     }
 }

@@ -123,9 +123,6 @@ namespace GenericSolution
             Image image = new Image();
 
             image = sec.AddImage(Tools.GetHeaderWithoutText());
-
-          //  image.Width = "190mm";
-           // image.Height = "35mm";
             image.Left = ShapePosition.Center;
         }
         private string SaveDocument(Document document)
@@ -557,7 +554,7 @@ namespace GenericSolution
             p.AddText("(f)");
 
             p = r.Cells[2].AddParagraph();
-            p.AddText("United States ofAmerica and Canada.");
+            p.AddText("United States of America and Canada.");
             r.Cells[2].MergeRight = 2;
 
             r = t.AddRow();
